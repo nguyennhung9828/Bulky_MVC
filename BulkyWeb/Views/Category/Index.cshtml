@@ -1,0 +1,29 @@
+﻿@model List<Category>
+@{
+}
+
+<h2>Category List</h2>
+<div class="clearfix">
+    <a class="btn btn-dark float-right" asp-controller="Category" asp-action="Create"> <i class="bi bi-patch-plus"></i> Create new category</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DisplayOrder</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    @foreach(var val in Model.OrderBy(u=>u.DisplayOrder)){
+        <tr>
+            <td>@val.Name</td>
+            <td>@val.DisplayOrder</td>
+            <td>
+                <a type="button" class="btn btn-outline-primary" asp-controller="Category" asp-route-id="@val.CategoryId" asp-action="Edit"><i class="bi bi-pencil-square"></i> Edit</a>
+                <a type="button" class="btn btn-outline-danger" asp-controller="Category" asp-route-id="@val.CategoryId" asp-action="Delete"><i class="bi bi-x-lg"></i> Delete</a>
+            </td>
+        </tr>
+    }
+    
+</table>

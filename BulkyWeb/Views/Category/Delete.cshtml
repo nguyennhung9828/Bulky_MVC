@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Category
+<table class="table table-bordered">
+<tr>
+    <td>
+            <h2>Delete Category</h2>
+    </td>
+</tr>
+    <form method="post">
+<tr>
+        <td>
+            <div class="">
+                <label asp-for="Name"></label>
+                <input class="form-control" readonly type="type" name="Name" value="@Model.Name" />
+            </div>
+        </td>
+</tr>
+<tr>
+        <td>
+            <div class="pt-2">
+                <label asp-for="DisplayOrder"></label>
+                <input class="form-control" type="type" readonly name="DisplayOrder" value="@Model.DisplayOrder" />
+            </div>
+        </td>
+</tr>
+<tr>
+        <td>
+            <button type="submit" class="btn btn-outline-primary" asp-controller="Category"  asp-action="Delete">Delete</button>
+            <a type="button" class="btn btn-outline-primary" asp-controller="Category" asp-action="Index">Back to Category</a>
+        </td>
+
+</tr>
+    </form>
+</table>
+
